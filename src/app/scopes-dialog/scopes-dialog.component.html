@@ -1,5 +1,5 @@
 <div class="ms-Dialog center-dialog ms-Dialog--close" id="scopes-dialog">
-    <button class="ms-Dialog-button ms-Dialog-buttonClose">
+    <button class="ms-Dialog-button ms-Dialog-buttonClose" autofocus>
         <i class="ms-Icon ms-Icon--Cancel"></i>
     </button>
     <div class="ms-Dialog-title">{{getStr('modify permissions')}}</div>
@@ -13,9 +13,10 @@
                 <tr *ngFor="let scope of scopes">
                     <td class="scopeRow">
                         <div class="c-checkbox">
-                            <label class="c-label">
+                            <label tabindex="0" class="c-label">
                                 <!-- scope.consented indicates that the user or admin has previously consented to the scope.-->
-                                <input type="checkbox" 
+                                <input type="checkbox"
+                                    tabindex="0"
                                     [disabled]="scope.consented"
                                     (change)="toggleRequestScope(scope)"
                                     name="checkboxId1" 
